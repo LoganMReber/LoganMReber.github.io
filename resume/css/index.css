@@ -1,0 +1,344 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+/* HTML5 display-role reset for older browsers */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Set every element's box-sizing to border-box */
+@font-face {
+  font-family: 'Cinzel';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Cinzel Regular'), local('Cinzel-Regular'), url(https://fonts.gstatic.com/s/cinzel/v9/8vIJ7ww63mVu7gt79mT-.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Play';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Play Regular'), local('Play-Regular'), url(https://fonts.gstatic.com/s/play/v11/6aez4K2oVqwIvtU2Gg.ttf) format('truetype');
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  max-width: 100%;
+}
+html {
+  font-size: 10px;
+}
+body {
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.6rem;
+  background: #eee;
+}
+h1,
+h2,
+h3 {
+  font-family: 'Cinzel', serif;
+}
+h1 {
+  font-size: 4.8rem;
+}
+h2 {
+  font-size: 3.2rem;
+}
+h3 {
+  font-size: 2.4rem;
+  font-weight: bold;
+  font-style: italic;
+  text-align: center;
+  padding: 10px;
+}
+a {
+  color: black;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+nav {
+  display: flex;
+  justify-content: flex-end;
+}
+nav a {
+  font-family: 'Play', sans-serif;
+  padding: 15px 4%;
+  font-weight: bold;
+}
+@media (max-width: 500px) {
+  nav {
+    flex-direction: column;
+    text-align: center;
+  }
+  nav a {
+    border-bottom: 1px #888 solid;
+  }
+  nav a:hover {
+    background: #ccc;
+  }
+}
+.main {
+  background: white;
+  width: 95%;
+  margin: 5px auto;
+  padding: 10px;
+}
+.main section {
+  display: flex;
+  justify-content: space-evenly;
+  border: 1px #aaa solid;
+  box-shadow: 5px 5px 4px #888;
+  margin: 20px;
+  padding: 20px;
+  font-family: 'Play', sans-serif;
+  background: #eee;
+}
+@media (max-width: 500px) {
+  .main section {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.main .top {
+  background-image: url("../img/showcase.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@media (max-width: 1024px) {
+  .main .top {
+    flex-direction: column;
+  }
+}
+@media (max-width: 500px) {
+  .main .bot {
+    display: none;
+  }
+}
+.main .bot-mobile {
+  display: none;
+}
+@media (max-width: 500px) {
+  .main .bot-mobile {
+    display: flex;
+  }
+}
+.left,
+.right {
+  width: 48%;
+  padding: 0 8px;
+}
+@media (max-width: 500px) {
+  .left,
+  .right {
+    width: 95%;
+  }
+}
+.top {
+  align-items: center;
+  color: white;
+}
+.top .left {
+  text-align: center;
+  margin: 160px 0;
+}
+.top .left h1,
+.top .left h2 {
+  margin: 15px 0;
+}
+@media (max-width: 1024px) {
+  .top .left {
+    margin: 80px 0;
+    width: 95%;
+  }
+}
+.top .right {
+  text-align: center;
+}
+.top .right img {
+  border-radius: 200px;
+  width: 40%;
+  border: 2px black dotted;
+}
+@media (max-width: 1024px) {
+  .top .right {
+    display: none;
+  }
+}
+.mid .left p {
+  text-indent: 20px;
+}
+.mid .right {
+  text-align: center;
+}
+.mid .right li {
+  line-height: 2.5;
+  border: 1px #aaa solid;
+  margin: 0 0 3px;
+  background: white;
+}
+.bot {
+  flex-direction: column;
+}
+.bot h3 {
+  padding: 15px 0;
+}
+.bot table {
+  width: 95%;
+  text-align: center;
+  margin: 0 auto;
+}
+.bot table tr {
+  background: white;
+}
+.bot table tr th,
+.bot table tr td {
+  padding: 10px 0;
+  border: 1px solid grey;
+}
+.bot table tr th {
+  font-weight: bold;
+  background: #242;
+  color: white;
+  border: 1px solid #333;
+}
+.bot table tr td {
+  border: 1px solid #333;
+  font-style: italic;
+}
+.bot table tr:nth-child(odd) {
+  background: #ded;
+}
+.bot-mobile p {
+  text-align: center;
+  line-height: 1.5;
+  margin: 10px 0;
+}
+footer {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 1.4rem;
+}
