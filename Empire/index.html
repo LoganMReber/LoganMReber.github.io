@@ -11,23 +11,87 @@
 <body>
     <div id="page-container">
             <header>
-                <h1>Empire Idle</h1>
+                <h1>empire idle</h1>
                 <nav>
-                    <a href="#build">Build</a>
-                    <a href="#improve">Improve</a>
-                    <a href="#invade">Invade</a>
-                    <a href="#about">About</a>
+                    <button id="Build-btn" onclick="setTab('Build')">Build</button>
+                    <button id="Improve-btn"onclick="setTab('Improve')">Improve</button>
+                    <button id="Invade-btn"onclick="setTab('Invade')">Invade</button>
+                    <button id="About-btn"onclick="setTab('About')">About</button>
                 </nav>
             </header>
-            <section id="resources">
-                <span id="Gold">Gold: 200</span>
-                <span id="Recruits">Recruits: 0</span>
-                <span id="Soldiers">Soldiers: 0</span>
-                <span id="Archers">Archers: 0</span>
-                <span id="Horsemen">Horsemen: 0</span>
-                <span id="Catapults">Catapults: 0</span>
+            <section id="counters">
+                <h4>resources</h4>
+                <div id="resources">
+                    <span class='resource'>
+                        <span id="Gold"></span>
+                            <span id="Gems"></span>
+                            <span id="Dyes"></span>
+                    </span>
+                    <span class='resource'>
+                        <span id="People"></span>
+                            <span id="Wheat"></span>
+                            <span id="Cattle"></span>
+                    </span>
+                    <span class='resource'>
+                        <span id="Wood"></span>
+                            <span id="Hard Wood"></span>
+                            <span id="Soft Wood"></span>
+                    </span>
+                    <span class='resource'>
+                            <span id="Metal"></span>
+                            <span id="Mithril"></span>
+                            <span id="Adamantite"></span>
+                    </span>
+                    
+                    
+                    
+                </div>
+                <div id="special-resources">
+                    <span id="Mana"></span>
+                    <span id="Living Wood"></span>
+                    <span id="Deep Metal"></span>
+                </div>
+                <h4>units</h4>
+                <div id="units">  
+                    <span id="Recruits"></span>
+                    <span id="Soldiers"></span>
+                    <span id="Archers"></span>
+                    <span id="Horsemen"></span>
+                    <span id="Catapults"></span>
+                    <span id="Swordsmen"></span>
+                    <span id="Spearmen"></span>
+                    <span id="Rangers"></span>
+                    <span id="Crossbowmen"></span>
+                    <span id="Cavalry"></span>
+                    <span id="Horse Archers"></span>
+                    <span id="Trebuchets"></span>
+                    <span id="Ballistae"></span>
+                    <span id="Knights"></span>
+                    <span id="Barbarians"></span>
+                    <span id="Pikemen"></span>
+                    <span id="Halberdiers"></span>
+                    <span id="Longbowmen"></span>
+                    <span id="Marksmen"></span>
+                    <span id="Men-At-Arms"></span>
+                    <span id="Snipers"></span>
+                    <span id="Lancers"></span>
+                    <span id="Paladins"></span>
+                    <span id="Skirmishers"></span>
+                    <span id="Hellions"></span>
+                    <span id="Heavy Trebuchets"></span>
+                    <span id="Scatter Trebuchets"></span>
+                    <span id="Fire Ballistae"></span>
+                    <span id="Cannons"></span>
+                    <span id="Elven Centurions"></span>
+                    <span id="Elnen Rangers"></span>
+                    <span id="Dwarven Infantry"></span>
+                    <span id="Dwarven Cannons"></span>
+                    <span id="Evoker"></span>
+                    <span id="Illusionist"></span>
+                    
+                </div>
             </section>
-            <section id="build" class="tab">
+            <section id="Build" class="tab">
                 <span id="Mines">Mine: 0</span>
                 <button id="Mines-btn" onclick="buy(0)">Buy(50G)</button>
                 <span id="Recruiters">Recruiter: 0</span>
@@ -41,14 +105,14 @@
                 <span id="Workshops">Workshop: 0</span>
                 <button id="Workshops-btn" disabled onclick="buy(5)">Buy(2500G)</button>
             </section>
-            <section id="improve" class="tab">
+            <section id="Improve" class="tab">
                 <p>Improve stuff here...</p>
             </section>
-            <section id="invade" class="tab">
+            <section id="Invade" class="tab">
                 <p>Invade stuff here...</p>
             </section>
-            <section id="about" class="tab">
-                    <h3>About</h3>
+            <section id="About" class="tab">
+                    <h3>about</h3>
                     <p>This is just a pet project for me to practice HTML, CSS, and Javascript. Please direct any questions to loganmreber@gmail.com.</p>
             </section>
             <footer>

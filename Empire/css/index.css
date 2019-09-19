@@ -1,3 +1,24 @@
+@font-face {
+  font-family: 'Major Mono Display';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Major Mono Display Regular'), local('MajorMonoDisplay-Regular'), url(https://fonts.gstatic.com/s/majormonodisplay/v3/RWmVoLyb5fEqtsfBX9PDZIGr2tFubRh7DXeU.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Share Tech Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Share Tech Mono'), local('ShareTechMono-Regular'), url(https://fonts.gstatic.com/s/sharetechmono/v9/J7aHnp1uDWRBEqV98dVQztYldFcLowEA.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'VT323';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('VT323 Regular'), local('VT323-Regular'), url(https://fonts.gstatic.com/s/vt323/v11/pxiKyp0ihIEF2isfFJA.ttf) format('truetype');
+}
 html,
 body,
 div,
@@ -119,6 +140,7 @@ table {
   border-spacing: 0;
 }
 * {
+  box-sizing: border-box;
   max-width: 100%;
   padding: 0;
   margin: 0;
@@ -126,6 +148,7 @@ table {
 html {
   font-size: 10px;
   background-color: #EEE;
+  font-family: 'Share Tech Mono', monospace;
 }
 body {
   font-size: 1.6rem;
@@ -145,6 +168,7 @@ header {
 header h1 {
   font-size: 2.8rem;
   padding: 15px;
+  font-family: 'Major Mono Display', monospace;
 }
 header nav {
   max-width: 100%;
@@ -152,24 +176,38 @@ header nav {
   justify-content: space-around;
   border-top: black solid 1px;
 }
-header nav a {
+header nav button {
   height: 100%;
   width: 25%;
   padding: 5px 0;
+  border: none;
   border-right: black solid 1px;
-  color: black;
-  text-decoration: none;
+  background-color: white;
+  font-family: 'Share Tech Mono', monospace;
+  font-weight: bold;
 }
-header nav a:hover {
+header nav button:hover:enabled {
   background: black;
   color: white;
 }
-header nav a:last-child {
+header nav button:first-child {
+  border-radius: 0 0 0 3px;
+}
+header nav button:last-child {
+  border-radius: 0 0 3px 0;
   border-right: none;
 }
 h3 {
   font-size: 2.4rem;
   padding: 5px 20px;
+  font-family: 'Major Mono Display', monospace;
+}
+h4 {
+  text-align: center;
+  padding: 5px 20px;
+  font-size: 2rem;
+  font-family: 'Major Mono Display', monospace;
+  font-weight: bold;
 }
 section {
   margin: 10px 0;
@@ -183,6 +221,7 @@ footer {
   padding: 30px;
   text-align: center;
   font-weight: bold;
+  font-family: 'VT323', monospace;
   margin: 10px 0;
   border: 2px solid black;
   border-radius: 5px;
@@ -191,27 +230,78 @@ footer {
 }
 #page-container {
   width: 90%;
+  max-width: 800px;
   margin: 0 auto;
+}
+.tab {
+  display: none;
+}
+#counters {
+  background-color: #EEE;
 }
 #resources {
   display: flex;
   flex-wrap: wrap;
+  border-top: 1px solid black;
+  border-bottom: 2px solid black;
+  justify-content: center;
+  background-color: white;
+  margin-bottom: 1px;
 }
-#resources span {
+#resources .resource {
   text-align: center;
-  width: 25%;
+  min-width: 50%;
 }
-#build {
+#resources .resource span {
+  display: none;
+  line-height: 1.5;
+}
+#special-resources {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  background-color: white;
+  margin-bottom: 1px;
 }
-#build span {
+#special-resources span {
+  display: none;
+  text-align: center;
+  min-width: 30%;
+  padding: 5px 0;
+}
+#units {
+  display: flex;
+  flex-wrap: wrap;
+  border-top: 1px solid black;
+  justify-content: center;
+  background-color: white;
+  margin-bottom: 1px;
+}
+#units span {
+  display: none;
+  text-align: center;
+  min-width: 25%;
+  padding: 5px 0;
+}
+#Build {
+  flex-wrap: wrap;
+}
+#Build span {
   text-align: center;
   width: 20%;
   padding: 10px 0;
 }
-#build button {
+#Build button {
+  background: white;
+  border: 2px solid black;
+  border-radius: 5px;
   width: 12%;
   padding: 5px 0;
   margin: 5px 0;
+  font-family: 'Share Tech Mono', monospace;
+}
+#Build button:hover:enabled {
+  cursor: pointer;
+  background: black;
+  color: white;
 }

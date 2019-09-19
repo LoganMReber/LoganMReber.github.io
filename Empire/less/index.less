@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Major+Mono+Display|Share+Tech+Mono|VT323&display=swap');
 @import "variables.less";
 @import "mixins.less";
 @import "reset.less";
 * {
+    box-sizing: border-box;
     max-width: 100%;
     padding: 0;
     //border: black 1px dashed; //debug only
@@ -11,6 +13,7 @@
 html {
     font-size: 10px;
     background-color: #EEE;
+    font-family: @std-font;
 }
 body {
     font-size: 1.6rem;
@@ -25,24 +28,31 @@ header {
     h1 {
         font-size: 2.8rem;
         padding: 15px;
+        font-family: @hdr-font;
     }
     nav {
         max-width: 100%;
         display: flex;
         justify-content: space-around;
         border-top: black solid 1px;
-        a {
+        button {
             height: 100%;
             width: 25%;
             padding: 5px 0;
+            border: none;
             border-right: black solid 1px;
-            color: black;
-            text-decoration: none;
-            &:hover {
+            background-color: @std-bg;
+            font-family: @std-font;
+            font-weight: bold;
+            &:hover:enabled {
                 background: black;
-                color: white;
+                color: @std-bg;
+            }
+            &:first-child {
+                border-radius: 0 0 0 3px;
             }
             &:last-child {
+                border-radius: 0 0 3px 0;
                 border-right: none;
             }
         }
@@ -52,6 +62,14 @@ header {
 h3 {
     font-size: 2.4rem;
     padding: 5px 20px;
+    font-family: @hdr-font;
+}
+h4 {
+    text-align: center;
+    padding: 5px 20px;
+    font-size: 2rem;
+    font-family: @hdr-font;
+    font-weight: bold;
 }
 section {
     .boxStyle();
@@ -61,22 +79,66 @@ footer {
     padding: 30px;
     text-align: center;
     font-weight: bold;
+    font-family: @sub-font;
     .boxStyle();
 }
 #page-container{
     width: 90%;
+    max-width: 800px;
     margin: 0 auto;
+}
+.tab {
+    display: none;
+}
+#counters {
+    background-color: #EEE;
 }
 #resources {
     display: flex;
     flex-wrap: wrap;
-    span {
+    border-top: 1px solid black;
+    border-bottom: @std-border;
+    justify-content: center;
+    background-color: @std-bg;
+    margin-bottom: 1px;
+    .resource {
+        span{
+            display: none;
+            line-height: 1.5;
+        }
         text-align: center;
-        width: 25%;
+        min-width: 50%;
+        
     }
 }
-#build {
+#special-resources {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: @std-bg;
+    margin-bottom: 1px;
+    span {
+        display: none;
+        text-align: center;
+        min-width: 30%;
+        padding: 5px 0;
+    }
+}
+#units {
+    display: flex;
+    flex-wrap: wrap;
+    border-top: 1px solid black;
+    justify-content: center;
+    background-color: @std-bg;
+    margin-bottom: 1px;
+    span {
+        display: none;
+        text-align: center;
+        min-width: 25%;
+        padding: 5px 0;
+    }
+}
+#Build {
     flex-wrap: wrap;
     span {
         text-align: center;
@@ -84,8 +146,17 @@ footer {
         padding: 10px 0;
     }
     button {
+        background: white;
+        border: @std-border;
+        border-radius: @std-border-rd;
         width: 12%;
         padding: 5px 0;
         margin: 5px 0;
+        font-family: @std-font;
+        &:hover:enabled {
+            cursor: pointer;
+            background: black;
+            color: white;
+        }
     }
 }
