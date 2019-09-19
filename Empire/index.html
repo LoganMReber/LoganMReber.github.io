@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta author="Logan Reber">
+    <title>Empire Idle Game</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <div id="page-container">
+            <header>
+                <h1>Empire Idle</h1>
+                <nav>
+                    <a href="#build">Build</a>
+                    <a href="#improve">Improve</a>
+                    <a href="#invade">Invade</a>
+                    <a href="#about">About</a>
+                </nav>
+            </header>
+            <section id="resources">
+                <span id="Gold">Gold: 200</span>
+                <span id="Recruits">Recruits: 0</span>
+                <span id="Soldiers">Soldiers: 0</span>
+                <span id="Archers">Archers: 0</span>
+                <span id="Horsemen">Horsemen: 0</span>
+                <span id="Catapults">Catapults: 0</span>
+            </section>
+            <section id="build" class="tab">
+                <span id="Mines">Mine: 0</span>
+                <button id="Mines-btn" onclick="buy(0)">Buy(50G)</button>
+                <span id="Recruiters">Recruiter: 0</span>
+                <button id="Recruiters-btn" onclick="buy(1)">Buy(100G)</button>
+                <span id="Barracks">Barracks: 0</span>
+                <button id="Barracks-btn" disabled onclick="buy(2)">Buy(250G)</button>
+                <span id="Ranges">Range: 0</span>
+                <button id="Ranges-btn" disabled onclick="buy(3)">Buy(350G)</button>
+                <span id="Stables">Stable: 0</span>
+                <button id="Stables-btn" disabled onclick="buy(4)">Buy(1000G)</button>
+                <span id="Workshops">Workshop: 0</span>
+                <button id="Workshops-btn" disabled onclick="buy(5)">Buy(2500G)</button>
+            </section>
+            <section id="improve" class="tab">
+                <p>Improve stuff here...</p>
+            </section>
+            <section id="invade" class="tab">
+                <p>Invade stuff here...</p>
+            </section>
+            <section id="about" class="tab">
+                    <h3>About</h3>
+                    <p>This is just a pet project for me to practice HTML, CSS, and Javascript. Please direct any questions to loganmreber@gmail.com.</p>
+            </section>
+            <footer>
+                <p>Empire Idle Copyright &copy; Logan Reber 2019</p>
+            </footer>
+    </div>
+    
+    <script src="./js/main.js"></script>
+</body>
+</html>
