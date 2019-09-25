@@ -21,6 +21,7 @@
             </header>
             <section id="counters">
                 <h4>resources</h4>
+                <span id="Land"></span>
                 <div id="resources">
                     <span class='resource'>
                         <span id="Gold"></span>
@@ -78,14 +79,14 @@
                     <span id="Paladins"></span>
                     <span id="Skirmishers"></span>
                     <span id="Hellions"></span>
-                    <span id="Heavy Trebuchets"></span>
-                    <span id="Scatter Trebuchets"></span>
-                    <span id="Fire Ballistae"></span>
+                    <span id="Heavy-Trebuchets"></span>
+                    <span id="Scatter-Trebuchets"></span>
+                    <span id="Fire-Ballistae"></span>
                     <span id="Cannons"></span>
-                    <span id="Elven Centurions"></span>
-                    <span id="Elnen Rangers"></span>
-                    <span id="Dwarven Infantry"></span>
-                    <span id="Dwarven Cannons"></span>
+                    <span id="Elven-Centurions"></span>
+                    <span id="Elven-Rangers"></span>
+                    <span id="Dwarven-Infantry"></span>
+                    <span id="Dwarven-Cannons"></span>
                     <span id="Evoker"></span>
                     <span id="Illusionist"></span>
                     
@@ -93,17 +94,23 @@
             </section>
             <section id="Build" class="tab">
                 <span id="Mines">Mine: 0</span>
-                <button id="Mines-btn" onclick="buy(0)">Buy(50G)</button>
+                <button id="Mines-btn" onclick="Buildings[0].buy()">50 Gold</button>
+                <span id="Farms">Farm: 0</span>
+                <button id="Farms-btn" onclick="Buildings[1].buy()">50 Gold</button>
+                <span id="Lumberyards">Lumberyard: 0</span>
+                <button id="Lumberyards-btn" onclick="Buildings[2].buy()">100 Gold</button>
+                <span id="Forges">Forge: 0</span>
+                <button id="Forges-btn" onclick="Buildings[3].buy()">100 Gold</button>
                 <span id="Recruiters">Recruiter: 0</span>
-                <button id="Recruiters-btn" onclick="buy(1)">Buy(100G)</button>
+                <button id="Recruiters-btn" onclick="Buildings[4].buy()">Buy(100G)</button>
                 <span id="Barracks">Barracks: 0</span>
-                <button id="Barracks-btn" disabled onclick="buy(2)">Buy(250G)</button>
+                <button id="Barracks-btn" disabled onclick="Buildings[5].buy()">Buy(250G)</button>
                 <span id="Ranges">Range: 0</span>
-                <button id="Ranges-btn" disabled onclick="buy(3)">Buy(350G)</button>
+                <button id="Ranges-btn" disabled onclick="Buildings[6].buy()">Buy(350G)</button>
                 <span id="Stables">Stable: 0</span>
-                <button id="Stables-btn" disabled onclick="buy(4)">Buy(1000G)</button>
+                <button id="Stables-btn" disabled onclick="Buildings[7].buy()">Buy(1000G)</button>
                 <span id="Workshops">Workshop: 0</span>
-                <button id="Workshops-btn" disabled onclick="buy(5)">Buy(2500G)</button>
+                <button id="Workshops-btn" disabled onclick="Buildings[8].buy()">Buy(2500G)</button>
             </section>
             <section id="Improve" class="tab">
                 <p>Improve stuff here...</p>
