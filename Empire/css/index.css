@@ -188,7 +188,7 @@ header nav button {
 }
 header nav button:hover:enabled {
   background: black;
-  color: white;
+  color: white !important;
 }
 header nav button:first-child {
   border-radius: 0 0 0 3px;
@@ -303,5 +303,5 @@ footer {
 #Build button:hover:enabled {
   cursor: pointer;
   background: black;
-  color: white;
+  color: white !important;
 }
