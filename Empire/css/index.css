@@ -141,7 +141,7 @@ table {
 }
 * {
   box-sizing: border-box;
-  max-width: 100%;
+  max-width: 100% !important;
   padding: 0;
   margin: 0;
 }
@@ -304,4 +304,39 @@ footer {
   cursor: pointer;
   background: black;
   color: white !important;
+}
+#Invade {
+  display: none;
+  justify-content: space-around;
+  padding: 20px 0;
+  text-align: center;
+}
+#Invade button {
+  padding: 10px 20px;
+  font-weight: bold;
+}
+.formation {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0;
+}
+.grid {
+  display: flex;
+  flex-direction: row;
+}
+.col {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid black;
+}
+.col:first-child {
+  border-left: 1px solid black;
+}
+.cell {
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  width: 4rem;
+  height: 4rem;
+  text-align: center;
+  line-height: 4rem;
 }

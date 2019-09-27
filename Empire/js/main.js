@@ -16,7 +16,8 @@ class Building extends GameObject{
     checkCost(){
         let flag = true;
         this.cost.forEach( i => {
-            if(Math.trunc(i[0] * Math.pow(1.2,this.val)) > Resources[i[1]].val){flag = false;}
+            if(!i[1]){if(!Resources[i[1]].val) flag = false;}
+            else if(Math.trunc(i[0] * Math.pow(1.2,this.val)) > Resources[i[1]].val){flag = false;}
         });
         return flag;
     }
@@ -47,6 +48,7 @@ class Building extends GameObject{
                         flag = false;
                         // break;
                     }
+                    Resources[i[0]*-1].delta -= i[1]*this.val;
                 }
                 else
                 {
@@ -55,6 +57,7 @@ class Building extends GameObject{
                         flag = false;
                         // break;
                     } 
+                    Units[i[0]*-1].delta -= i[1]*this.val;
                 }
             });
             return flag;
@@ -76,13 +79,13 @@ class Building extends GameObject{
 
     buy(){
         if(!this.checkCost()){return;}
-        this.cost.forEach( i => {Resources[i[1]].val -= Math.trunc(i[0] * Math.pow(1.2,this.val))});
+        this.cost.forEach( i => {if(!i[1]){Resources[i[1]].val--}else{Resources[i[1]].val -= Math.trunc(i[0] * Math.pow(1.2,this.val))}});
         this.val++;
         updateUI();
     }   
 
     sell(){
-        this.cost.forEach( i => {Resources[i[1]].val += Math.trunc(i[0] * Math.pow(1.2,this.val))});
+        this.cost.forEach( i => {if(!i[1]){Resources[i[1]].val++}else{Resources[i[1]].val += Math.trunc(i[0] * Math.pow(1.2,this.val))}});
         this.val--;
         updateUI();
     }
@@ -317,7 +320,7 @@ function updateUI(){
     });
     Resources.forEach((i) => {
         if(i.delta > 0)document.getElementById(`${i.name}`).innerHTML = `${i.name}: ${i.val} (+${i.delta}/sec)`;
-        else if(i.delta < 0)document.getElementById(`${i.name}`).innerHTML = `${i.name}: ${i.val} (-${i.delta}/sec)`;
+        else if(i.delta < 0)document.getElementById(`${i.name}`).innerHTML = `${i.name}: ${i.val} (${i.delta}/sec)`;
         else document.getElementById(`${i.name}`).innerHTML = `${i.name}: ${i.val}`;
         if(i.name === 'Land')
         {
@@ -335,7 +338,7 @@ function updateUI(){
     });
     Units.forEach((i) => {
         if(i.delta > 0)document.getElementById(`${i.name}`).innerHTML = `${i.name}: ${i.val} (+${i.delta}/sec)`;
-        else if(i.delta < 0)document.getElementById(`${i.name}`).innerHTML = `${i.name}: ${i.val} (-${i.delta}/sec)`;
+        else if(i.delta < 0)document.getElementById(`${i.name}`).innerHTML = `${i.name}: ${i.val} (${i.delta}/sec)`;
         else document.getElementById(`${i.name}`).innerHTML = `${i.name}: ${i.val}`;
         if(!i.mods[0]){
             document.getElementById(`${i.name}`).style.display = 'none';
@@ -354,5 +357,5 @@ function updateUI(){
 
 //=====Game Start=====
 initGame();
-setInterval(updateUI, 1000);
-setInterval(updateValues, 1000);
+setInterval(updateUI, 100);
+setInterval(updateValues, 100);
